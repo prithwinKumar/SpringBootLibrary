@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.library.SpringBootLibrary.model.Books;
-import com.library.SpringBootLibrary.service.BookService;
+import com.library.SpringBootLibrary.model.Author;
+import com.library.SpringBootLibrary.service.AuthorService;
 
 @RestController
 public class LibraryController {
 
 	@Autowired
-	private BookService bookService;
+	private AuthorService authorService;
 	
 	@GetMapping("/books/{id}")
-	public ResponseEntity<Books> get(@PathVariable Integer id) {
+	public ResponseEntity<Author> get(@PathVariable Integer id) {
 		try {
-			Books book =  bookService.getBook(id);
-			return new ResponseEntity<Books>(book, HttpStatus.OK);
+			Author book =  authorService.getAuthor(id);
+			return new ResponseEntity<Author>(book, HttpStatus.OK);
 		}catch(NoSuchElementException e){
-			return new ResponseEntity<Books>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Author>(HttpStatus.NOT_FOUND);
 		}
 		
 	}

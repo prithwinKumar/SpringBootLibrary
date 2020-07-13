@@ -6,14 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Books {
+public class Author {
 	
 	private Integer Id;
 	private String Name;
-	private Integer Pages;
-	private Integer AuthorId;
+	private String State;
+	private Integer Country;
 	
-	public Books() {
+	public Author() {
         super();
     }
 	
@@ -31,23 +31,28 @@ public class Books {
 	public void setName(String name) {
 		this.Name = name;
 	}
-	public Integer getPages() {
-		return Pages;
+
+	public String getState() {
+		return State;
 	}
-	public void setPages(Integer pages) {
-		this.Pages = pages;
+
+	public void setState(String state) {
+		State = state;
 	}
-	public Integer getAuthorId() {
-		return AuthorId;
+
+	public Integer getCountry() {
+		return Country;
 	}
-	public void setAuthorId(Integer authorId) {
-		this.AuthorId = authorId;
+
+	public void setCountry(Integer country) {
+		Country = country;
 	}
 
 	@Override
 	public String toString() {
-		return "Books [Id=" + Id + ", Name=" + Name + ", Pages=" + Pages + ", AuthorId=" + AuthorId + "]";
+		return "Author [Id=" + Id + ", Name=" + Name + ", State=" + State + ", Country=" + Country + "]";
 	}
 	
 	
 }
+	
