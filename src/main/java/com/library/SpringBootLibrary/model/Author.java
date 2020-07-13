@@ -11,7 +11,7 @@ public class Author {
 	private Integer Id;
 	private String Name;
 	private String State;
-	private Integer Country;
+	private String Country;
 	
 	public Author() {
         super();
@@ -37,15 +37,15 @@ public class Author {
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.State = state;
 	}
 
-	public Integer getCountry() {
+	public String getCountry() {
 		return Country;
 	}
 
-	public void setCountry(Integer country) {
-		Country = country;
+	public void setCountry(String country) {
+		this.Country = country;
 	}
 
 	@Override

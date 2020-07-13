@@ -21,8 +21,8 @@ public class LibraryController {
 	@GetMapping("/author/{id}")
 	public ResponseEntity<Author> get(@PathVariable Integer id) {
 		try {
-			Author book =  authorService.getAuthor(id);
-			return new ResponseEntity<Author>(book, HttpStatus.OK);
+			Author author =  authorService.getAuthor(id);
+			return new ResponseEntity<Author>(author, HttpStatus.OK);
 		}catch(NoSuchElementException e){
 			return new ResponseEntity<Author>(HttpStatus.NOT_FOUND);
 		}
