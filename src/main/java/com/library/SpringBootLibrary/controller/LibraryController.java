@@ -18,7 +18,7 @@ public class LibraryController {
 	@Autowired
 	private AuthorService authorService;
 	
-	@GetMapping("/books/{id}")
+	@GetMapping("/author/{id}")
 	public ResponseEntity<Author> get(@PathVariable Integer id) {
 		try {
 			Author book =  authorService.getAuthor(id);
